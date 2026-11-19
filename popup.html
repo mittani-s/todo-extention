@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>サクッとToDo</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1><span class="mark" aria-hidden="true"></span>やること</h1>
+      <p class="count" id="count" aria-live="polite">残り 0</p>
+    </header>
+
+    <form id="composer" class="composer">
+      <input
+        id="new-todo"
+        type="text"
+        maxlength="200"
+        autocomplete="off"
+        placeholder="やることを書いて Enter"
+        aria-label="新しいやること"
+      />
+      <button class="add" type="submit" aria-label="追加">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M8 2.2v11.6M2.2 8h11.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+        </svg>
+      </button>
+    </form>
+
+    <ul id="list" class="list"></ul>
+
+    <div id="undo" class="undo" hidden>
+      <span id="undo-text">削除した</span>
+      <button type="button" id="undo-btn">戻す</button>
+    </div>
+
+    <footer class="footer">
+      <div class="filters" role="group" aria-label="表示">
+        <button type="button" data-filter="active" aria-pressed="true">未完了</button>
+        <button type="button" data-filter="done" aria-pressed="false">完了</button>
+        <button type="button" data-filter="all" aria-pressed="false">すべて</button>
+      </div>
+      <button type="button" id="clear" class="clear" hidden>完了を消す</button>
+    </footer>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

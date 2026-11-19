@@ -1,0 +1,11 @@
+# macOS が生成するファイル
+.DS_Store
+
+# ローカルの環境変数
+.env
+.env.*
+!.env.example
+
+# Chrome 拡張のパッケージ化で生成される鍵と配布物
+*.pem
+*.crx
